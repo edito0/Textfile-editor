@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #171717;
+    background-color: #e2e2e2;
+    box-sizing: border-box;
+}
+
+hr{
+    border-top: 1px solid black;
+}
+
+/* FOR MENU */
+.menu{
+    display: flex;
+    align-items: center;
+    background-color: #DA0037;
+    color: #EDEDED;
+    
+}
+
+.menu li{ 
+    list-style: none;
+}   
+
+.menu li a{
+    display: block;
+    height: 35px;
+    font-size: 13px;
+    padding:10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+}      
+
+.menu li a:hover{
+    background-color: #EDEDED;
+    color: #DA0037;
+
+}
+
+.navbaritem{
+    position: relative;
+    display: inline-block;
+
+}
+
+.navbaritem2{
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+   
+.dropdown{ 
+    display: none;
+    position: absolute;
+    background-color: rgb(240, 240, 240);
+    z-index: 2;
+
+}
+
+.dropdown a{
+    border-bottom: 1px solid rgb(148, 148, 148);
+    color: #171717;
+    cursor: pointer;
+}
+.dropdown a:last-child{
+    border-bottom: 0px;
+}
+
+.navbaritem:hover .dropdown{
+    display: block;
+} 
+
+.tools{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    background-color: #EDEDED;
+    color: #171717;
+    padding: 5px 0px;
+}
+
+.tools li select{
+    margin: 0px 20px;
+    padding: 3px 20px;
+    outline: none;
+    border: none;
+}
+
+input[type="number"] {
+    padding: 11px 0px 11px 5px;
+    outline: none;
+    border: none;
+	border: none;    
+	width: 40px;
+	height: 15px;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 25px;
+	height: 15px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+
+.toolitem{
+    margin: 0px 15px;
+}
+ 
+.toolitem i{
+   height: 17px;
+   padding: 0px 5px;
+}
+
+.toolitem i:hover{
+    background-color: rgb(187, 187, 187);
+    color: black;
+}
+
+/* .gap{
+    height: 10px;
+    width: 100%;
+    background-color: rgb(143, 143, 143);
+} */
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+#editorText{
+    padding: 60px;
+    margin: 10px;
+    width: 50vw;
+    height: 900px;
+    background-color: white;
+    border:1px solid rgba(0, 0, 0, 0.40) ;
+    text-overflow: clip;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.navcontroler{
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and ( max-width: 940px) {
+
+    .navbaritem2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tools{
+        justify-content: center;
+    }
+
+    .navbaritem2 div{
+        margin: 4px 0px;
+    }
+
+    #editorText{
+        width: 60vw;
+        height: 700px;
+    }
+}
+ 
+@media only screen and ( max-width: 515px) {
+
+
+    .navcontroler{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .tools li select{
+        margin: 0px;
+    }
+
+    #editorText{
+        width: 90vw;
+        height: 600px;
+    }
+}

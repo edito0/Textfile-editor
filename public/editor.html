@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="menu">
+            <li class="navbaritem">
+                <a>File</a>
+                <div class="dropdown">
+                    <a onclick="generatePDF()">Save</a>
+                    <a>Print</a>
+                    <a>Templates</a>
+                </div>
+            </li>
+
+            <li class="navbaritem">
+                <a>Edit</a>
+                <div class="dropdown">
+                    <a onclick="converter('SelectAll')">SelectAll</a>
+                    <a onclick="converter('undo')">Undo</a>
+                    <a onclick="converter('redo')">Redo</a>
+                    <a onclick="converter('copy')">Copy</a>
+                    <a onclick="converter('paste')">Paste</a>
+                </div>
+            </li>
+
+            <li class="navbaritem">
+                <a>Insert</a>
+                <div class="dropdown">
+                    <a onclick="converterImage('insertImage')">Image</a>
+                    <a onclick="converterImageSize()">Resize</a>
+                </div>
+            </li>
+
+            <li class="navbaritem">
+                <a>Help</a>
+                <div class="dropdown">
+                    <a>ShortCut</a>
+                    <a>MailUs</a>
+                </div>
+            </li>
+
+        </div>
+
+        <div class="menu tools">
+
+            <li class="navbaritem2">
+
+                <div class="navcontroler">
+
+                    <div>
+
+                        <select name="" id="" onclick="converterFont('fontName',value)">
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Arial">Arial</option>
+                            <option value="cursive">cursive</option>
+                            <option value="fantasy">fantasy</option>
+                        </select>
+                        <input type="number" onclick="converterFont('fontSize',value)" value="3">
+
+                    </div>
+
+                    <div>
+
+
+
+                        <span class="toolitem">
+                            <i class="fa-solid fa-bold" onclick="converter('bold')"></i>
+                            <i class="fa-solid fa-italic" onclick="converter('italic')"></i>
+                            <i class="fa-solid fa-underline" onclick="converter('underline')"></i>
+                            <i class="fa-solid fa-strikethrough" onclick="converter('strikethrough')"></i>
+                        </span>
+
+                        <span class="toolitem">
+                            <i class="fas fa-superscript" onclick="converter('superscript')"></i>
+                            <i class="fas fa-subscript" onclick="converter('subscript')"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="navcontroler">
+
+                    <div>
+
+                        <span class="toolitem">
+                            Aa <input type="color" name="" id="" onclick="converterFont('foreColor',value)"
+                                pattern="#[a-f0-9]{6}" title="hexadecimal color" value="#ff0000">
+                        </span>
+
+                        <span class="toolitem">
+                            <i class="fa-solid fa-align-center" onclick="converter('justifyCenter')"></i>
+                            <i class="fa-solid fa-align-right" onclick="converter('justifyRight')"></i>
+                            <i class="fa-solid fa-align-justify" onclick="converter('justifyFull')"></i>
+                            <i class="fa-solid fa-align-left" onclick="converter('justifyLeft')"></i>
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <span class="toolitem">
+                            <i class="fas fa-list-ul" onclick="converter('insertUnorderedList')"></i>
+                            <i class="fas fa-list-ol" onclick="converter('insertOrderedList')"></i>
+                        </span>
+
+
+                        <span class="toolitem">
+                            <i class="fas fa-link" onclick="converter('createLink')"></i>
+                            <i class="fas fa-remove-format" onclick="converter('removeFormat')"></i>
+                            <i class="fas fa-ruler-horizontal" onclick="converter('insertHorizontalRule')"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+            </li>
+
+        </div>
+    </nav>
+
+    <!-- <div class="gap">
+    </div> -->
+
+    <main>
+        <div id="editor">
+            <iframe id="editorText" name="richTextFiled" ></iframe>
+        </div>
+    </main>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script> -->
+    <script src="html2pdf.bundle.min.js"></script>
+
+    <script src="script.js"></script>  
+</body>
+
+</html>
